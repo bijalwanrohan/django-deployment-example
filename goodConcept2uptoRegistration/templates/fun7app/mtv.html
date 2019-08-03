@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MTV.html</title>
+  </head>
+  <body>
+    <h1>THIS IS A MODEL-TEMPLATE-VIEW PAGE . WELCOME!!!</h1>
+<h2>HERE IS THE RECORDS OF STUDENTS IN DATABASE</h2>
+
+{% if stu_key %}
+<table>
+  <thead>
+    <th>Student name</th>
+    <th>Email address</th>
+    <th>Aadhar number</th>
+  </thead>
+  <tr>
+    {%for row in stu_key%}
+  <td> {{row.NameStudent}}</td>
+  <td>{{row.Email_blnk}}</td>
+  <td>{{row.aadhaar}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{%else%}
+<h2>no records for students</h2>
+
+    {% endif%}
+  </body>
+</html>

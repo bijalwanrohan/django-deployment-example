@@ -1,0 +1,22 @@
+<DOCTYPE html>
+{% extends 'fun7app/base.html' %}
+{% load staticfiles %}
+
+{% block bodyblock %}
+{%if registered%}
+<h1>YOU ARE now REGISTERED,,KINDLY LOG IN </h1>
+<h2>THANK YOU!!</h2>
+
+{% else %}
+<h1>FILL THE REGISTRATION FORM!!</h1>
+
+<form enctype="multipart/form-data" method="POST">
+  {%csrf_token%}
+  {{user_form.as_p}} <br><br><br><br><br>
+  {{student_form}}
+<input type="submit" name="" value="RegisterNow">
+</form>
+
+
+{% endif %}
+{% endblock %}
